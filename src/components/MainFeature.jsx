@@ -169,19 +169,26 @@ try {
           return
         }
 
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
         
         // Check if MediaRecorder supports the stream
-        if (!MediaRecorder.isTypeSupported('audio/webm') && !MediaRecorder.isTypeSupported('audio/wav')) {
-          toast.error("Audio recording format not supported")
-          stream.getTracks().forEach(track => track.stop())
-          return
+        let mimeType = 'audio/wav' // Default fallback
+        if (typeof MediaRecorder !== 'undefined') {
+          if (MediaRecorder.isTypeSupported('audio/webm')) {
+            mimeType = 'audio/webm'
+          } else if (MediaRecorder.isTypeSupported('audio/wav')) {
+            mimeType = 'audio/wav'
+          } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+            mimeType = 'audio/mp4'
+          } else {
+            toast.error("Audio recording format not supported")
+            stream.getTracks().forEach(track => track.stop())
+            return
+          }
         }
 
-        const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/wav'
         mediaRecorderRef.current = new MediaRecorder(stream, { mimeType })
         chunksRef.current = []
-
         mediaRecorderRef.current.ondataavailable = (e) => {
           if (e.data.size > 0) {
             chunksRef.current.push(e.data)
@@ -587,31 +594,33 @@ try {
               </div>
             </motion.div>
           </motion.div>
-        )}
+)}
       </AnimatePresence>
-{/* Custom Slider Styles */}
-      <style jsx="true">{`
-        .slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          border-radius: 50%;
-          background: linear-gradient(90deg, #FF006E, #8338EC);
-          cursor: pointer;
-          box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
-        }
-        
-        .slider::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: linear-gradient(90deg, #FF006E, #8338EC);
-          cursor: pointer;
-          border: none;
-          box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
-        }
-      `}</style>
+
+      {/* Custom Slider Styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #FF006E, #8338EC);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+          }
+          
+          .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #FF006E, #8338EC);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+          }
+        `
+      }} />
     </div>
   )
 }
