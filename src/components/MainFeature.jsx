@@ -152,10 +152,9 @@ const MainFeature = () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
         mediaRecorderRef.current.stop()
       }
-      setIsRecording(false)
+setIsRecording(false)
       toast.success("Recording stopped")
     } else {
-} else {
       // Start recording
       try {
         // Check if MediaRecorder is available
@@ -174,11 +173,11 @@ const MainFeature = () => {
         
         // Check if MediaRecorder supports the stream
         let mimeType = 'audio/wav' // Default fallback
-        if (MediaRecorder.isTypeSupported('audio/webm')) {
+        if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported('audio/webm')) {
           mimeType = 'audio/webm'
-        } else if (MediaRecorder.isTypeSupported('audio/wav')) {
+        } else if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported('audio/wav')) {
           mimeType = 'audio/wav'
-        } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+        } else if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported('audio/mp4')) {
           mimeType = 'audio/mp4'
         } else {
           toast.error("Audio recording format not supported")
@@ -188,6 +187,7 @@ const MainFeature = () => {
 
         mediaRecorderRef.current = new MediaRecorder(stream, { mimeType })
         chunksRef.current = []
+        mediaRecorderRef.current.ondataavailable = (e) => {
           if (e.data.size > 0) {
             chunksRef.current.push(e.data)
           }
@@ -349,15 +349,14 @@ const MainFeature = () => {
                   <p className="text-xl text-surface-300 mb-4">Ready to sing?</p>
                   <button
                     onClick={() => setShowSearch(true)}
-                    className="btn-primary"
+className="btn-primary"
                   >
                     Choose Your Song
                   </button>
-</div>
+                </div>
               </div>
             )}
           </div>
-
           {/* Progress Bar */}
           {selectedSong && (
             <div className="mt-6">
@@ -549,11 +548,10 @@ const MainFeature = () => {
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-neon rounded-full flex items-center justify-center shadow-glow">
                   <ApperIcon name="Mic" className="w-10 h-10 text-white" />
                 </div>
-                
-                <h3 className="text-2xl font-heading font-bold mb-4">Performance Recorded!</h3>
+<h3 className="text-2xl font-heading font-bold mb-4">Performance Recorded!</h3>
                 <p className="text-surface-300 mb-6">Your amazing performance has been recorded. Save it or share with the world!</p>
                 
-{/* Audio Preview */}
+                {/* Audio Preview */}
                 <div className="bg-surface-800 rounded-xl p-4 mb-6">
                   <audio controls className="w-full">
                     <source src={recordingData.url} type={recordingData.blob?.type || 'audio/wav'} />
@@ -584,12 +582,12 @@ const MainFeature = () => {
                       }}
                       className="bg-surface-700 hover:bg-surface-600 px-4 py-2 rounded-xl font-semibold transition-all duration-300"
                     >
-                      <ApperIcon name="Share" className="w-5 h-5 mr-2" />
+<ApperIcon name="Share" className="w-5 h-5 mr-2" />
                       Share
                     </button>
                   </div>
                 </div>
-</div>
+              </div>
             </motion.div>
           </motion.div>
         )}
