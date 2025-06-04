@@ -156,7 +156,7 @@ const MainFeature = () => {
       toast.success("Recording stopped")
     } else {
       // Start recording
-      try {
+try {
         // Check if MediaRecorder is available
         if (typeof MediaRecorder === 'undefined') {
           toast.error("Recording is not supported in this browser")
@@ -589,13 +589,13 @@ const MainFeature = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Custom Slider Styles */}
-      <style jsx>{`
+{/* Custom Slider Styles */}
+      <style jsx="true">{`
         .slider::-webkit-slider-thumb {
           appearance: none;
           width: 20px;
           height: 20px;
+          border-radius: 50%;
           border-radius: 50%;
           background: linear-gradient(90deg, #FF006E, #8338EC);
           cursor: pointer;
