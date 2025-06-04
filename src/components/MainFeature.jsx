@@ -140,7 +140,7 @@ const MainFeature = () => {
     setCurrentTime(newTime)
   }
 
-  // Recording functionality
+// Recording functionality
   const toggleRecording = async () => {
     if (!selectedSong) {
       toast.error("Please select a song first")
@@ -157,8 +157,29 @@ const MainFeature = () => {
     } else {
       // Start recording
       try {
+        // Check if MediaRecorder is available
+        if (typeof MediaRecorder === 'undefined') {
+          toast.error("Recording is not supported in this browser")
+          return
+        }
+
+        // Check if getUserMedia is available
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          toast.error("Microphone access is not supported in this browser")
+          return
+        }
+
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-        mediaRecorderRef.current = new MediaRecorder(stream)
+        
+        // Check if MediaRecorder supports the stream
+        if (!MediaRecorder.isTypeSupported('audio/webm') && !MediaRecorder.isTypeSupported('audio/wav')) {
+          toast.error("Audio recording format not supported")
+          stream.getTracks().forEach(track => track.stop())
+          return
+        }
+
+        const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/wav'
+        mediaRecorderRef.current = new MediaRecorder(stream, { mimeType })
         chunksRef.current = []
 
         mediaRecorderRef.current.ondataavailable = (e) => {
@@ -168,7 +189,7 @@ const MainFeature = () => {
         }
 
         mediaRecorderRef.current.onstop = () => {
-          const blob = new Blob(chunksRef.current, { type: 'audio/wav' })
+          const blob = new Blob(chunksRef.current, { type: mimeType })
           const url = URL.createObjectURL(blob)
           setRecordingData({
             url,
@@ -182,11 +203,27 @@ const MainFeature = () => {
           stream.getTracks().forEach(track => track.stop())
         }
 
+        mediaRecorderRef.current.onerror = (event) => {
+          console.error('MediaRecorder error:', event.error)
+          toast.error("Recording error occurred")
+          setIsRecording(false)
+          stream.getTracks().forEach(track => track.stop())
+        }
+
         mediaRecorderRef.current.start()
         setIsRecording(true)
         toast.success("Recording started")
       } catch (error) {
-        toast.error("Failed to access microphone")
+        console.error('Recording error:', error)
+        if (error.name === 'NotAllowedError') {
+          toast.error("Microphone access denied. Please allow microphone access and try again.")
+        } else if (error.name === 'NotFoundError') {
+          toast.error("No microphone found. Please connect a microphone and try again.")
+        } else if (error.name === 'NotSupportedError') {
+          toast.error("Recording is not supported in this browser")
+        } else {
+          toast.error("Failed to access microphone")
+        }
       }
     }
   }
@@ -311,8 +348,8 @@ const MainFeature = () => {
                   >
                     Choose Your Song
                   </button>
-                </div>
-              )}
+</div>
+              </div>
             )}
           </div>
 
@@ -511,13 +548,13 @@ const MainFeature = () => {
                 <h3 className="text-2xl font-heading font-bold mb-4">Performance Recorded!</h3>
                 <p className="text-surface-300 mb-6">Your amazing performance has been recorded. Save it or share with the world!</p>
                 
-                {/* Audio Preview */}
+{/* Audio Preview */}
                 <div className="bg-surface-800 rounded-xl p-4 mb-6">
                   <audio controls className="w-full">
-                    <source src={recordingData.url} type="audio/wav" />
+                    <source src={recordingData.url} type={recordingData.blob?.type || 'audio/wav'} />
+                    Your browser does not support audio playback.
                   </audio>
                 </div>
-
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   <button
