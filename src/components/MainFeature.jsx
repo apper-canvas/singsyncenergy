@@ -155,8 +155,9 @@ const MainFeature = () => {
       setIsRecording(false)
       toast.success("Recording stopped")
     } else {
+} else {
       // Start recording
-try {
+      try {
         // Check if MediaRecorder is available
         if (typeof MediaRecorder === 'undefined') {
           toast.error("Recording is not supported in this browser")
@@ -169,27 +170,24 @@ try {
           return
         }
 
-const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
         
         // Check if MediaRecorder supports the stream
         let mimeType = 'audio/wav' // Default fallback
-        if (typeof MediaRecorder !== 'undefined') {
-          if (MediaRecorder.isTypeSupported('audio/webm')) {
-            mimeType = 'audio/webm'
-          } else if (MediaRecorder.isTypeSupported('audio/wav')) {
-            mimeType = 'audio/wav'
-          } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
-            mimeType = 'audio/mp4'
-          } else {
-            toast.error("Audio recording format not supported")
-            stream.getTracks().forEach(track => track.stop())
-            return
-          }
+        if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm'
+        } else if (MediaRecorder.isTypeSupported('audio/wav')) {
+          mimeType = 'audio/wav'
+        } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4'
+        } else {
+          toast.error("Audio recording format not supported")
+          stream.getTracks().forEach(track => track.stop())
+          return
         }
 
         mediaRecorderRef.current = new MediaRecorder(stream, { mimeType })
         chunksRef.current = []
-        mediaRecorderRef.current.ondataavailable = (e) => {
           if (e.data.size > 0) {
             chunksRef.current.push(e.data)
           }
@@ -591,10 +589,10 @@ const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
                     </button>
                   </div>
                 </div>
-              </div>
+</div>
             </motion.div>
           </motion.div>
-)}
+        )}
       </AnimatePresence>
 
       {/* Custom Slider Styles */}
