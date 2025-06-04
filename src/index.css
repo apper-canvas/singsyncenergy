@@ -1,0 +1,106 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px currentColor;
+  }
+  
+  .neon-border {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)) padding-box,
+                linear-gradient(90deg, #FF006E, #8338EC, #FFBE0B) border-box;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply text-white bg-gradient-main;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-light active:bg-primary-dark 
+           px-6 py-3 rounded-xl font-semibold transition-all duration-300
+           transform hover:scale-105 active:scale-95 shadow-neon-primary;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-light active:bg-secondary-dark 
+           px-6 py-3 rounded-xl font-semibold transition-all duration-300
+           transform hover:scale-105 active:scale-95 shadow-neon-secondary;
+  }
+  
+  .card-glass {
+    @apply glass-effect rounded-2xl p-6 transition-all duration-300
+           hover:shadow-glow transform hover:scale-[1.02];
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #FF006E, #8338EC);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #FF4D9D, #A366F0);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}

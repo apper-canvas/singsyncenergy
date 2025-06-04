@@ -1,0 +1,263 @@
+[
+  {
+    "id": "1",
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "duration": 355,
+    "audioUrl": "https://example.com/audio/bohemian-rhapsody.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Is this the real life?" },
+      { "time": 3.5, "text": "Is this just fantasy?" },
+      { "time": 7, "text": "Caught in a landslide" },
+      { "time": 10.5, "text": "No escape from reality" },
+      { "time": 14, "text": "Open your eyes" },
+      { "time": 17.5, "text": "Look up to the skies and see" },
+      { "time": 21, "text": "I'm just a poor boy" },
+      { "time": 24.5, "text": "I need no sympathy" },
+      { "time": 28, "text": "Because I'm easy come, easy go" },
+      { "time": 31.5, "text": "Little high, little low" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "duration": 183,
+    "audioUrl": "https://example.com/audio/imagine.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Imagine there's no heaven" },
+      { "time": 4, "text": "It's easy if you try" },
+      { "time": 8, "text": "No hell below us" },
+      { "time": 12, "text": "Above us only sky" },
+      { "time": 16, "text": "Imagine all the people" },
+      { "time": 20, "text": "Living for today" },
+      { "time": 24, "text": "Imagine there's no countries" },
+      { "time": 28, "text": "It isn't hard to do" }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "duration": 294,
+    "audioUrl": "https://example.com/audio/billie-jean.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Billie Jean is not my lover" },
+      { "time": 4, "text": "She's just a girl who claims that I am the one" },
+      { "time": 8, "text": "But the kid is not my son" },
+      { "time": 12, "text": "She says I am the one" },
+      { "time": 16, "text": "But the kid is not my son" },
+      { "time": 20, "text": "Billie Jean is not my lover" }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "duration": 201,
+    "audioUrl": "https://example.com/audio/sweet-caroline.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Where it began, I can't begin to know when" },
+      { "time": 5, "text": "But then I know it's growing strong" },
+      { "time": 10, "text": "Was in the spring" },
+      { "time": 13, "text": "And spring became the summer" },
+      { "time": 17, "text": "Who'd have believed you'd come along" },
+      { "time": 22, "text": "Hands, touching hands" },
+      { "time": 26, "text": "Reaching out, touching me, touching you" },
+      { "time": 32, "text": "Sweet Caroline" }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Don't Stop Believin'",
+    "artist": "Journey",
+    "duration": 251,
+    "audioUrl": "https://example.com/audio/dont-stop-believin.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Just a small town girl" },
+      { "time": 4, "text": "Living in a lonely world" },
+      { "time": 8, "text": "She took the midnight train going anywhere" },
+      { "time": 16, "text": "Just a city boy" },
+      { "time": 20, "text": "Born and raised in South Detroit" },
+      { "time": 24, "text": "He took the midnight train going anywhere" }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "duration": 273,
+    "audioUrl": "https://example.com/audio/i-will-always-love-you.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "If I should stay" },
+      { "time": 4, "text": "I would only be in your way" },
+      { "time": 8, "text": "So I'll go, but I know" },
+      { "time": 12, "text": "I'll think of you every step of the way" },
+      { "time": 18, "text": "And I will always love you" },
+      { "time": 24, "text": "I will always love you" }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "My Way",
+    "artist": "Frank Sinatra",
+    "duration": 275,
+    "audioUrl": "https://example.com/audio/my-way.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "And now, the end is near" },
+      { "time": 5, "text": "And so I face the final curtain" },
+      { "time": 10, "text": "My friend, I'll say it clear" },
+      { "time": 15, "text": "I'll state my case, of which I'm certain" },
+      { "time": 20, "text": "I've lived a life that's full" },
+      { "time": 25, "text": "I traveled each and every highway" },
+      { "time": 30, "text": "And more, much more than this" },
+      { "time": 35, "text": "I did it my way" }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "duration": 230,
+    "audioUrl": "https://example.com/audio/dancing-queen.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "You can dance, you can jive" },
+      { "time": 4, "text": "Having the time of your life" },
+      { "time": 8, "text": "Ooh, see that girl" },
+      { "time": 11, "text": "Watch that scene" },
+      { "time": 13, "text": "Digging the dancing queen" },
+      { "time": 18, "text": "Friday night and the lights are low" },
+      { "time": 22, "text": "Looking out for a place to go" }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Livin' on a Prayer",
+    "artist": "Bon Jovi",
+    "duration": 249,
+    "audioUrl": "https://example.com/audio/livin-on-a-prayer.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Tommy used to work on the docks" },
+      { "time": 4, "text": "Union's been on strike" },
+      { "time": 7, "text": "He's down on his luck, it's tough" },
+      { "time": 11, "text": "So tough" },
+      { "time": 15, "text": "Gina works the diner all day" },
+      { "time": 19, "text": "Working for her man" },
+      { "time": 22, "text": "She brings home her pay for love" },
+      { "time": 26, "text": "For love" }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "duration": 391,
+    "audioUrl": "https://example.com/audio/hotel-california.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "On a dark desert highway" },
+      { "time": 4, "text": "Cool wind in my hair" },
+      { "time": 8, "text": "Warm smell of colitas" },
+      { "time": 12, "text": "Rising up through the air" },
+      { "time": 16, "text": "Up ahead in the distance" },
+      { "time": 20, "text": "I saw a shimmering light" },
+      { "time": 24, "text": "My head grew heavy and my sight grew dim" },
+      { "time": 28, "text": "I had to stop for the night" }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Yesterday",
+    "artist": "The Beatles",
+    "duration": 125,
+    "audioUrl": "https://example.com/audio/yesterday.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Yesterday, all my troubles seemed so far away" },
+      { "time": 6, "text": "Now it looks as though they're here to stay" },
+      { "time": 12, "text": "Oh, I believe in yesterday" },
+      { "time": 18, "text": "Suddenly, I'm not half the man I used to be" },
+      { "time": 24, "text": "There's a shadow hanging over me" },
+      { "time": 30, "text": "Oh, yesterday came suddenly" }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Shake It Off",
+    "artist": "Taylor Swift",
+    "duration": 219,
+    "audioUrl": "https://example.com/audio/shake-it-off.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "I stay out too late" },
+      { "time": 3, "text": "Got nothing in my brain" },
+      { "time": 6, "text": "That's what people say, mm-mm" },
+      { "time": 10, "text": "That's what people say, mm-mm" },
+      { "time": 14, "text": "I go on too many dates" },
+      { "time": 17, "text": "But I can't make them stay" },
+      { "time": 20, "text": "At least that's what people say, mm-mm" },
+      { "time": 24, "text": "That's what people say, mm-mm" }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "duration": 258,
+    "audioUrl": "https://example.com/audio/wonderwall.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Today is gonna be the day" },
+      { "time": 4, "text": "That they're gonna throw it back to you" },
+      { "time": 8, "text": "By now you should've somehow" },
+      { "time": 12, "text": "Realized what you gotta do" },
+      { "time": 16, "text": "I don't believe that anybody" },
+      { "time": 20, "text": "Feels the way I do about you now" }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "We Are the Champions",
+    "artist": "Queen",
+    "duration": 179,
+    "audioUrl": "https://example.com/audio/we-are-the-champions.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "I've paid my dues" },
+      { "time": 4, "text": "Time after time" },
+      { "time": 8, "text": "I've done my sentence" },
+      { "time": 12, "text": "But committed no crime" },
+      { "time": 16, "text": "And bad mistakes" },
+      { "time": 20, "text": "I've made a few" },
+      { "time": 24, "text": "I've had my share of sand kicked in my face" },
+      { "time": 28, "text": "But I've come through" }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Can't Help Myself",
+    "artist": "Four Tops",
+    "duration": 164,
+    "audioUrl": "https://example.com/audio/cant-help-myself.mp3",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop",
+    "lyricsData": [
+      { "time": 0, "text": "Sugar pie, honey bunch" },
+      { "time": 3, "text": "You know that I love you" },
+      { "time": 6, "text": "I can't help myself" },
+      { "time": 9, "text": "I love you and nobody else" },
+      { "time": 13, "text": "In and out my life" },
+      { "time": 16, "text": "You come and you go" },
+      { "time": 19, "text": "Leaving just your picture behind" },
+      { "time": 23, "text": "And I've kissed it a thousand times" }
+    ]
+  }
+]
